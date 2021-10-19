@@ -287,9 +287,9 @@ const Login = () => {
     <LoginPage
       t={t}
       i18n={i18n}
-      logo="assets/LindsayBB_Logo.png"
       signIn={SignIn}
       loading={loading}
+      logo="assets/LindsayBB_Logo.png"
       loginResponse={loginResponse}
       forgotResponse={forgotResponse}
       fields={fields}
