@@ -289,7 +289,7 @@ const Login = () => {
       i18n={i18n}
       signIn={SignIn}
       loading={loading}
-      logo="assets/LindsayBB_Logo.png"
+      logo="assets/OpenWiFi_LogoLockup_DarkGreyColour.svg"
       loginResponse={loginResponse}
       forgotResponse={forgotResponse}
       fields={fields}
