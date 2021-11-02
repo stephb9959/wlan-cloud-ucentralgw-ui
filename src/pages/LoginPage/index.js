@@ -418,7 +418,7 @@ const Login = () => {
       i18n={i18n}
       signIn={SignIn}
       loading={loading}
-      logo="assets/Arilia_Large.jpg"
+      logo="assets/Arilia_Large.png"
       loginResponse={loginResponse}
       forgotResponse={forgotResponse}
       fields={fields}
