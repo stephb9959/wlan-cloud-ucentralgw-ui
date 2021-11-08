@@ -43,6 +43,7 @@ const TheLayout = () => {
         logo="assets/Small_Logo.png"
         options={navigation}
         redirectTo="/devices"
+        logoWidth="90px"
       />
       <div className="c-wrapper">
         <Header
