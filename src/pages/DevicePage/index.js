@@ -11,6 +11,8 @@ import { DeviceProvider, DeviceStatusCard, DeviceDetails, useAuth, useToast } fr
 import { useTranslation } from 'react-i18next';
 import ConfigurationDisplay from 'components/ConfigurationDisplay';
 import WifiAnalysis from 'components/WifiAnalysis';
+import CapabilitiesDisplay from 'components/CapabilitiesDisplay';
+import NotesTab from './NotesTab';
 
 const DevicePage = () => {
   const { t } = useTranslation();
@@ -160,6 +162,22 @@ const DevicePage = () => {
                   <CNavLink
                     className="font-weight-bold"
                     href="#"
+                    active={index === 8}
+                    onClick={() => setIndex(8)}
+                  >
+                    {t('device.capabilities')}
+                  </CNavLink>
+                  <CNavLink
+                    className="font-weight-bold"
+                    href="#"
+                    active={index === 7}
+                    onClick={() => setIndex(7)}
+                  >
+                    {t('configuration.notes')}
+                  </CNavLink>
+                  <CNavLink
+                    className="font-weight-bold"
+                    href="#"
                     active={index === 6}
                     onClick={() => setIndex(6)}
                   >
@@ -211,7 +229,15 @@ const DevicePage = () => {
                       <ConfigurationDisplay deviceConfig={deviceConfig} getData={refresh} />
                     ) : null}
                   </CTabPane>
+                  <CTabPane active={index === 8}>
+                    {index === 8 ? <CapabilitiesDisplay serialNumber={deviceId} /> : null}
+                  </CTabPane>
                   <CTabPane active={index === 6}>{index === 6 ? <WifiAnalysis /> : null}</CTabPane>
+                  <CTabPane active={index === 7}>
+                    {index === 7 ? (
+                      <NotesTab deviceConfig={deviceConfig} refresh={refresh} />
+                    ) : null}
+                  </CTabPane>
                   <CTabPane active={index === 2}>
                     {index === 2 ? <CommandHistory /> : null}
                   </CTabPane>
