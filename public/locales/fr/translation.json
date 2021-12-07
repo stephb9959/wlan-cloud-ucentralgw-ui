@@ -71,6 +71,7 @@
 		"date": "Rendez-vous amoureux",
 		"day": "journée",
 		"days": "journées",
+		"default_map": "Carte par défaut",
 		"delete": "Effacer",
 		"delete_device": "Supprimer le périphérique",
 		"details": "Détails",
@@ -272,6 +273,7 @@
 	"contact": {
 		"access_pin": "NIP d'accès",
 		"add_contact": "Ajouter le contact",
+		"contact": "Contact",
 		"create_contact": "Créer un contact",
 		"currently_selected_contact": "Contact actuellement sélectionné : {{contact}}",
 		"delete": "Effacer le contact?",
@@ -347,7 +349,9 @@
 		"currently_selected_venue": "Lieu actuellement sélectionné : {{config}}",
 		"delete_success": "Entité supprimée avec succès",
 		"delete_warning": "Attention : cette opération ne peut pas être annulée",
+		"duplicate_from_node": "Dupliquer avec un nœud racine spécifique",
 		"duplicate_map": "Carte en double",
+		"duplicate_with_node": "Dupliquer {{mapName}} avec {{rootName}} comme nœud racine",
 		"edit_failure": "Échec de la mise à jour : {{error}}",
 		"enter_here": "Entrez les IP que vous souhaitez ajouter ici",
 		"entire_tree": "Carte du réseau",
@@ -664,6 +668,19 @@
 		"uptime": "La disponibilité",
 		"used_total_memory": "{{used}} utilisé / {{total}} total"
 	},
+	"subscriber": {
+		"create": "Créer un abonné",
+		"edit": "Modifier l'abonné",
+		"error_create": "Erreur lors de la création de l'abonné : {{error}}",
+		"error_delete": "Erreur lors de la suppression de l'abonné : {{error}}",
+		"error_fetching": "Erreur lors de la récupération des abonnés : {{error}}",
+		"error_fetching_single": "Erreur lors de la récupération de l'abonné : {{error}}",
+		"error_update": "Erreur lors de la mise à jour de l'abonné : {{error}}",
+		"subscribers": "Les abonnés",
+		"success_create": "Abonné créé avec succès !",
+		"success_delete": "Abonné supprimé avec succès !",
+		"success_update": "Abonné mis à jour avec succès !"
+	},
 	"system": {
 		"error_fetching": "Erreur lors de la récupération des informations système",
 		"error_reloading": "Erreur lors du rechargement : {{error}}",
@@ -753,6 +770,7 @@
 		"send_code_again": "Envoyer code à nouveau",
 		"show_hide_password": "Afficher/Masquer le mot de passe",
 		"successful_validation": "Numéro de téléphone validé ! Cliquez sur le bouton Enregistrer pour le lier à votre profil",
+		"table_title": "Utilisateurs administrateurs",
 		"update_failure": "Erreur lors de la tentative de mise à jour : {{error}}",
 		"update_failure_title": "mise à jour a échoué",
 		"update_success": "L'utilisateur a bien été mis à jour",
