@@ -71,6 +71,7 @@
 		"date": "Date",
 		"day": "day",
 		"days": "days",
+		"default_map": "Default Map",
 		"delete": "Delete",
 		"delete_device": "Delete Device",
 		"details": "Details",
@@ -272,6 +273,7 @@
 	"contact": {
 		"access_pin": "Access PIN",
 		"add_contact": "Add Contact",
+		"contact": "Contact",
 		"create_contact": "Create Contact",
 		"currently_selected_contact": "Currently Selected Contact: {{contact}}",
 		"delete": "Delete Contact?",
@@ -347,7 +349,9 @@
 		"currently_selected_venue": "Currently Selected Venue: {{config}}",
 		"delete_success": "Entity Successfully Deleted",
 		"delete_warning": "Warning: this operation cannot be reverted",
+		"duplicate_from_node": "Duplicate with specific Root Node",
 		"duplicate_map": "Duplicate Map",
+		"duplicate_with_node": "Duplicate {{mapName}} with {{rootName}} as root node",
 		"edit_failure": "Update unsuccessful : {{error}}",
 		"enter_here": "Enter the IP(s) you'd like to add here",
 		"entire_tree": "Network Map",
@@ -664,6 +668,19 @@
 		"uptime": "Uptime",
 		"used_total_memory": "{{used}} used / {{total}} total "
 	},
+	"subscriber": {
+		"create": "Create Subscriber",
+		"edit": "Edit Subscriber",
+		"error_create": "Error creating subscriber: {{error}}",
+		"error_delete": "Error deleting subscriber: {{error}}",
+		"error_fetching": "Error fetching subscribers: {{error}}",
+		"error_fetching_single": "Error fetching subscriber: {{error}}",
+		"error_update": "Error updating subscriber: {{error}}",
+		"subscribers": "Subscribers",
+		"success_create": "Subscriber successfully created!",
+		"success_delete": "Subscriber successfully deleted!",
+		"success_update": "Successfully updated subscriber!"
+	},
 	"system": {
 		"error_fetching": "Error while fetching system information",
 		"error_reloading": "Error while reloading: {{error}}",
@@ -753,6 +770,7 @@
 		"send_code_again": "Send Code Again",
 		"show_hide_password": "Show/Hide Password",
 		"successful_validation": "Phone Number Validated! Click the save button to link it to your profile",
+		"table_title": "Admin Users",
 		"update_failure": "Error while trying to update: {{error}}",
 		"update_failure_title": "Update Failed",
 		"update_success": "User Updated Successfully",
