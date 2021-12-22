@@ -154,6 +154,7 @@
 		"optional": "Wahlweise",
 		"overall_health": "Allgemeine Gesundheit",
 		"password_policy": "Kennwortrichtlinie",
+		"preferences": "Einstellungen",
 		"preview": "Vorschau",
 		"program": "Programm",
 		"reason": "Grund",
@@ -177,6 +178,7 @@
 		"show_all": "Zeige alles",
 		"socket_connection_closed": "Verbindung geschlossen!",
 		"start": "Start",
+		"status": "Status",
 		"stop_editing": "Stoppen Sie die Bearbeitung",
 		"submit": "Absenden",
 		"submitted": "Eingereicht",
@@ -574,6 +576,9 @@
 		"username": "Benutzername",
 		"verification_code": "Geben Sie hier Ihre Bestätigung ein",
 		"wrong_code": "Der eingegebene Bestätigungscode ist ungültig."
+	},
+	"preferences": {
+		"provisioning": "Bereitstellung"
 	},
 	"reboot": {
 		"directions": "Wann möchten Sie dieses Gerät neu starten?",
