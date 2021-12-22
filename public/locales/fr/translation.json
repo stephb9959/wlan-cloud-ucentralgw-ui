@@ -154,6 +154,7 @@
 		"optional": "Optionnel",
 		"overall_health": "Santé globale",
 		"password_policy": "Politique de mot de passe",
+		"preferences": "Préférences",
 		"preview": "Aperçu",
 		"program": "Programme",
 		"reason": "raison",
@@ -177,6 +178,7 @@
 		"show_all": "Montre tout",
 		"socket_connection_closed": "Connexion fermée !",
 		"start": "Début",
+		"status": "Statut",
 		"stop_editing": "Arrêter la modification",
 		"submit": "Soumettre",
 		"submitted": "Soumis",
@@ -574,6 +576,9 @@
 		"username": "Nom d'utilisateur",
 		"verification_code": "Entrez votre vérification ici",
 		"wrong_code": "Le code de vérification saisi n'est pas valide."
+	},
+	"preferences": {
+		"provisioning": "Provisioning"
 	},
 	"reboot": {
 		"directions": "Quand souhaitez-vous redémarrer cet appareil ?",
