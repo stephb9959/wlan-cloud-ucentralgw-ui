@@ -154,6 +154,7 @@
 		"optional": "Opcional",
 		"overall_health": "Saúde geral",
 		"password_policy": "Política de Senha",
+		"preferences": "Preferências",
 		"preview": "Visualizar",
 		"program": "Programa",
 		"reason": "RAZÃO",
@@ -177,6 +178,7 @@
 		"show_all": "mostre tudo",
 		"socket_connection_closed": "Conexão fechada!",
 		"start": "Começar",
+		"status": "Status",
 		"stop_editing": "Pare de editar",
 		"submit": "Enviar",
 		"submitted": "Submetido",
@@ -574,6 +576,9 @@
 		"username": "Nome de usuário",
 		"verification_code": "Insira sua verificação aqui",
 		"wrong_code": "O código de verificação inserido não é válido."
+	},
+	"preferences": {
+		"provisioning": "Provisioning"
 	},
 	"reboot": {
 		"directions": "Quando você gostaria de reinicializar este dispositivo?",
