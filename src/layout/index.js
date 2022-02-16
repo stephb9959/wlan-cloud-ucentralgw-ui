@@ -16,7 +16,7 @@ const TheLayout = () => {
       <Sidebar
         showSidebar={showSidebar}
         setShowSidebar={setShowSidebar}
-        logo="assets/Arilia_Large.png"
+        logo="assets/OpenWiFi_LogoLockup_WhiteColour.svg"
         options={
           <>
             <CSidebarNavItem
@@ -61,7 +61,7 @@ const TheLayout = () => {
           t={t}
           i18n={i18n}
           logout={logout}
-          logo="assets/Arilia_Large.png"
+          logo="assets/OpenWiFi_LogoLockup_WhiteColour.svg"
           authToken={currentToken}
           endpoints={endpoints}
           user={user}

@@ -16,7 +16,7 @@ const Login = () => {
       setEndpoints={setEndpoints}
       addToast={addToast}
       axios={axios}
-      logo="assets/Arilia_Large.png"
+      logo="assets/Open_WiFi_Dark_Logo.svg"
     />
   );
 };
