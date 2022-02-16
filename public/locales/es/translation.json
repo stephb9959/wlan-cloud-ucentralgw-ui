@@ -17,6 +17,7 @@
 		"blink": "Parpadeo",
 		"device_leds": "LED de dispositivo",
 		"execute_now": "¿Le gustaría establecer este patrón ahora?",
+		"explanation": "¿Qué patrón le gustaría establecer en este dispositivo durante 30 segundos?",
 		"pattern": "Elija el patrón que le gustaría usar:",
 		"set_leds": "Establecer LED",
 		"when_blink_leds": "¿Cuándo desea que los LED del dispositivo parpadeen?"
@@ -46,6 +47,7 @@
 		"cancel": "Cancelar",
 		"certificate": "Certificado",
 		"certificates": "Certificados",
+		"claim": "Reclamación",
 		"clear": "Claro",
 		"close": "Cerrar",
 		"code": "Código",
@@ -60,6 +62,7 @@
 		"confirm_stop_editing": "¿Estás seguro de que quieres dejar de editar? Esto cancelará cualquier cambio no guardado que haya realizado.",
 		"connected": "Conectado",
 		"copied": "Copiado!",
+		"copied_to_clipboard": "¡Copiado al portapapeles!",
 		"copy_to_clipboard": "Copiar al portapapeles",
 		"create": "Crear",
 		"created": "creado",
@@ -116,6 +119,7 @@
 		"hours": "horas",
 		"id": "Carné de identidad",
 		"invalid_credentials": "Nombre de usuario y / o contraseña inválido",
+		"invalid_date_explanation": "Fecha no válida, utilice el calendario accesible con el botón de la derecha",
 		"invalid_file": "El archivo elegido no es válido, lea las instrucciones y ajuste su archivo en consecuencia",
 		"invalid_password": "Esta contraseña no confirma las reglas básicas de contraseña. Visite nuestra página de Política de contraseñas para obtener más información.",
 		"invalid_pem": "Su archivo .pem no es válido. Debe comenzar con '----- BEGIN CERTIFICATE -----' O '----- BEGIN PRIVATE KEY -----' y debe terminar con '----- END CERTIFICATE --- - 'O' ----- FIN DE CLAVE PRIVADA ----- '",
@@ -161,6 +165,7 @@
 		"recorded": "Grabado",
 		"refresh": "Refrescar",
 		"refresh_device": "Actualizar dispositivo",
+		"remove_claim": "Quitar reclamo",
 		"required": "Necesario",
 		"result": "Resultado",
 		"save": "Salvar",
@@ -201,6 +206,7 @@
 		"vendors": "Vendedores",
 		"view_more": "Ver más",
 		"visibility": "Visibilidad",
+		"waiting_for_update": "Esperando actualización",
 		"yes": "Sí"
 	},
 	"configuration": {
@@ -654,11 +660,14 @@
 	},
 	"statistics": {
 		"data": "Datos (KB)",
+		"data_mb": "Datos (MB)",
 		"latest_statistics": "Últimas estadísticas",
 		"lifetime_stats": "Estadísticas de por vida",
+		"memory": "Memoria",
 		"no_interfaces": "No hay estadísticas de vida útil de la interfaz disponibles",
 		"show_latest": "Últimas estadísticas",
-		"title": "estadística"
+		"title": "estadística",
+		"used": "Memoria usada %"
 	},
 	"status": {
 		"connection_status": "Estado",
@@ -670,17 +679,22 @@
 		"percentage_free": "{{percentage}}% de {{total}} gratis",
 		"percentage_used": "{{percentage}}% de {{total}} utilizado",
 		"title": "#{{serialNumber}} Estado",
+		"total_memory": "Memoria total",
 		"uptime": "Tiempo de actividad",
 		"used_total_memory": "{{used}} usado / {{total}} total"
 	},
 	"subscriber": {
+		"add_device_subscriber_explanation": "Para reclamar otros dispositivos, puede usar nuestra barra de búsqueda o reclamar directamente desde la tabla. Si un dispositivo ya fue reclamado por un usuario, deberá ir a sus detalles y anular la asignación antes de reclamarlo.",
 		"create": "Crear suscriptor",
+		"devices_one": "{{count}} dispositivo",
+		"devices_other": "{{count}} dispositivos",
 		"edit": "Editar suscriptor",
 		"error_create": "Error al crear el suscriptor: {{error}}",
 		"error_delete": "Error al eliminar el suscriptor: {{error}}",
 		"error_fetching": "Error al obtener suscriptores: {{error}}",
 		"error_fetching_single": "Error al obtener el suscriptor: {{error}}",
 		"error_update": "Error al actualizar el suscriptor: {{error}}",
+		"is_already_claimed": "ya es reclamado por",
 		"subscribers": "Suscriptores",
 		"success_create": "¡Suscriptor creado correctamente!",
 		"success_delete": "¡Suscriptor eliminado correctamente!",
@@ -791,7 +805,10 @@
 		"associations": "Asociaciones",
 		"mode": "Modo",
 		"network_diagram": "Diagrama de Red",
+		"override_dfs": "Anular DFS",
 		"radios": "Radios",
-		"title": "Análisis de Wi-Fi"
+		"scan_warning": "Su radio 5G está en un canal de radar, debe habilitar \"Anular DFS\" para permitir el escaneo de todos los canales 5G",
+		"title": "Análisis de Wi-Fi",
+		"vendor": "Vendedor"
 	}
 }

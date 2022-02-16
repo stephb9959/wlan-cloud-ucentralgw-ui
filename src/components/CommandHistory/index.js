@@ -2,14 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  CWidgetDropdown,
-  CRow,
-  CCol,
+  CCardHeader,
+  CCardBody,
   CButton,
   CDataTable,
   CCard,
   CPopover,
   CButtonToolbar,
+  CFormText,
 } from '@coreui/react';
 import CIcon from '@coreui/icons-react';
 import DatePicker from 'react-widgets/DatePicker';
@@ -41,7 +41,9 @@ const DeviceCommands = () => {
   const [commands, setCommands] = useState([]);
   const [loading, setLoading] = useState(false);
   const [start, setStart] = useState('');
+  const [startError, setStartError] = useState(false);
   const [end, setEnd] = useState('');
+  const [endError, setEndError] = useState(false);
   const [commandLimit, setCommandLimit] = useState(25);
   // Load more button related
   const [loadingMore, setLoadingMore] = useState(false);
@@ -65,11 +67,25 @@ const DeviceCommands = () => {
   };
 
   const modifyStart = (value) => {
-    setStart(value);
+    try {
+      new Date(value).toISOString();
+      setStartError(false);
+      setStart(value);
+    } catch (e) {
+      setStart('');
+      setStartError(true);
+    }
   };
 
   const modifyEnd = (value) => {
-    setEnd(value);
+    try {
+      new Date(value).toISOString();
+      setEndError(false);
+      setEnd(value);
+    } catch (e) {
+      setEnd('');
+      setEndError(true);
+    }
   };
 
   const deleteCommandFromList = (commandUuid) => {
@@ -245,149 +261,162 @@ const DeviceCommands = () => {
 
   return (
     <div>
-      <CWidgetDropdown
-        className="m-0"
-        inverse="true"
-        color="gradient-primary"
-        header={t('commands.title')}
-        footerSlot={
-          <div className="pb-1 px-3">
-            <CRow className="mb-2">
-              <CCol>
-                From:
-                <DatePicker includeTime onChange={(date) => modifyStart(date)} />
-              </CCol>
-              <CCol>
-                To:
-                <DatePicker includeTime onChange={(date) => modifyEnd(date)} />
-              </CCol>
-            </CRow>
-            <CCard>
-              <div className="overflow-auto" style={{ height: '200px' }}>
-                <CDataTable
-                  addTableClasses="ignore-overflow table-sm"
-                  border
-                  loading={loading}
-                  items={commands ?? []}
-                  fields={columns}
-                  className="text-white"
-                  sorterValue={{ column: 'created', desc: 'true' }}
-                  scopedSlots={{
-                    command: (item) => <td className="align-middle">{item.command}</td>,
-                    completed: (item) => (
-                      <td className="align-middle">
-                        {item.completed && item.completed !== 0 ? (
-                          <FormattedDate date={item.completed} />
-                        ) : (
-                          'Pending'
-                        )}
-                      </td>
-                    ),
-                    executed: (item) => (
-                      <td className="align-middle">
-                        {item.executed && item.executed !== 0 ? (
-                          <FormattedDate date={item.executed} />
-                        ) : (
-                          'Pending'
-                        )}
-                      </td>
-                    ),
-                    submitted: (item) => (
-                      <td className="align-middle">
-                        {item.submitted && item.submitted !== '' ? (
-                          <FormattedDate date={item.submitted} />
-                        ) : (
-                          'Pending'
-                        )}
-                      </td>
-                    ),
-                    errorCode: (item) => <td className="align-middle">{item.errorCode}</td>,
-                    show_buttons: (item, index) => (
-                      <td className="align-middle">
-                        <CButtonToolbar
-                          role="group"
-                          className="justify-content-flex-end"
-                          style={{ width: '160px' }}
-                        >
-                          <CPopover
-                            content={
-                              item.command === 'trace' ? t('common.download') : t('common.result')
-                            }
-                          >
-                            <CButton
-                              color="primary"
-                              variant="outline"
-                              shape="square"
-                              size="sm"
-                              className="mx-2"
-                              onClick={() => {
-                                toggleDetails(item);
-                              }}
-                            >
-                              {item.command === 'trace' ? (
-                                <CIcon name="cil-cloud-download" content={cilCloudDownload} />
-                              ) : (
-                                <CIcon name="cil-calendar-check" content={cilCalendarCheck} />
-                              )}
-                            </CButton>
-                          </CPopover>
-                          <CPopover content={t('common.details')}>
-                            <CButton
-                              color="primary"
-                              variant="outline"
-                              shape="square"
-                              size="sm"
-                              className="mx-2"
-                              onClick={() => {
-                                toggleResponse(item);
-                              }}
-                            >
-                              <CIcon name="cilList" />
-                            </CButton>
-                          </CPopover>
-                          <CPopover content={t('common.delete')}>
-                            <CButton
-                              color="primary"
-                              variant="outline"
-                              shape="square"
-                              size="sm"
-                              className="mx-2"
-                              onClick={() => {
-                                toggleConfirmModal(item.UUID, index);
-                              }}
-                            >
-                              <CIcon name="cilTrash" />
-                            </CButton>
-                          </CPopover>
-                        </CButtonToolbar>
-                      </td>
-                    ),
-                  }}
-                />
-
-                {showLoadingMore && (
-                  <div className="mb-3">
-                    <LoadingButton
-                      label={t('common.view_more')}
-                      isLoadingLabel={t('common.loading_more_ellipsis')}
-                      isLoading={loadingMore}
-                      action={showMoreCommands}
-                      variant="outline"
-                    />
-                  </div>
-                )}
-              </div>
-            </CCard>
+      <CCard className="m-0">
+        <CCardHeader className="dark-header">
+          <div className="d-flex flex-row-reverse align-items-center">
+            <div className="pl-2">
+              <CPopover content={t('common.refresh')}>
+                <CButton
+                  size="sm"
+                  color="info"
+                  onClick={getCommands}
+                  disabled={startError || endError}
+                >
+                  <CIcon content={cilSync} />
+                </CButton>
+              </CPopover>
+            </div>
+            <div className="pl-2">
+              <DatePicker
+                includeTime
+                onChange={(date) => modifyEnd(date)}
+                value={end ? new Date(end) : undefined}
+              />
+              <CFormText color="danger" hidden={!endError}>
+                {t('common.invalid_date_explanation')}
+              </CFormText>
+            </div>
+            To:
+            <div className="pl-2">
+              <DatePicker
+                includeTime
+                onChange={(date) => modifyStart(date)}
+                value={start ? new Date(start) : undefined}
+              />
+              <CFormText color="danger" hidden={!startError}>
+                {t('common.invalid_date_explanation')}
+              </CFormText>
+            </div>
+            From:
           </div>
-        }
-      >
-        <div className="text-right float-right">
-          <CButton onClick={refreshCommands} size="sm">
-            <CIcon name="cil-sync" content={cilSync} className="text-white" size="2xl" />
-          </CButton>
-        </div>
-      </CWidgetDropdown>
+        </CCardHeader>
+        <CCardBody className="p-1">
+          <div className="overflow-auto" style={{ height: 'calc(100vh - 620px)' }}>
+            <CDataTable
+              addTableClasses="ignore-overflow table-sm"
+              border
+              loading={loading}
+              items={commands ?? []}
+              fields={columns}
+              className="text-white"
+              sorterValue={{ column: 'created', desc: 'true' }}
+              scopedSlots={{
+                command: (item) => <td className="align-middle">{item.command}</td>,
+                completed: (item) => (
+                  <td className="align-middle">
+                    {item.completed && item.completed !== 0 ? (
+                      <FormattedDate date={item.completed} />
+                    ) : (
+                      'Pending'
+                    )}
+                  </td>
+                ),
+                executed: (item) => (
+                  <td className="align-middle">
+                    {item.executed && item.executed !== 0 ? (
+                      <FormattedDate date={item.executed} />
+                    ) : (
+                      'Pending'
+                    )}
+                  </td>
+                ),
+                submitted: (item) => (
+                  <td className="align-middle">
+                    {item.submitted && item.submitted !== '' ? (
+                      <FormattedDate date={item.submitted} />
+                    ) : (
+                      'Pending'
+                    )}
+                  </td>
+                ),
+                errorCode: (item) => <td className="align-middle">{item.errorCode}</td>,
+                show_buttons: (item, index) => (
+                  <td className="align-middle">
+                    <CButtonToolbar
+                      role="group"
+                      className="justify-content-flex-end"
+                      style={{ width: '160px' }}
+                    >
+                      <CPopover
+                        content={
+                          item.command === 'trace' ? t('common.download') : t('common.result')
+                        }
+                      >
+                        <CButton
+                          color="primary"
+                          variant="outline"
+                          shape="square"
+                          size="sm"
+                          className="mx-2"
+                          onClick={() => {
+                            toggleDetails(item);
+                          }}
+                        >
+                          {item.command === 'trace' ? (
+                            <CIcon name="cil-cloud-download" content={cilCloudDownload} />
+                          ) : (
+                            <CIcon name="cil-calendar-check" content={cilCalendarCheck} />
+                          )}
+                        </CButton>
+                      </CPopover>
+                      <CPopover content={t('common.details')}>
+                        <CButton
+                          color="primary"
+                          variant="outline"
+                          shape="square"
+                          size="sm"
+                          className="mx-2"
+                          onClick={() => {
+                            toggleResponse(item);
+                          }}
+                        >
+                          <CIcon name="cilList" />
+                        </CButton>
+                      </CPopover>
+                      <CPopover content={t('common.delete')}>
+                        <CButton
+                          color="primary"
+                          variant="outline"
+                          shape="square"
+                          size="sm"
+                          className="mx-2"
+                          onClick={() => {
+                            toggleConfirmModal(item.UUID, index);
+                          }}
+                        >
+                          <CIcon name="cilTrash" />
+                        </CButton>
+                      </CPopover>
+                    </CButtonToolbar>
+                  </td>
+                ),
+              }}
+            />
 
+            {showLoadingMore && (
+              <div className="mb-3">
+                <LoadingButton
+                  label={t('common.view_more')}
+                  isLoadingLabel={t('common.loading_more_ellipsis')}
+                  isLoading={loadingMore}
+                  action={showMoreCommands}
+                  variant="outline"
+                />
+              </div>
+            )}
+          </div>
+        </CCardBody>
+      </CCard>
       <WifiScanResultModalWidget
         show={showScanModal}
         toggle={toggleScanModal}

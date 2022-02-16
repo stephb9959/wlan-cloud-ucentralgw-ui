@@ -17,6 +17,7 @@
 		"blink": "LEDs Blinken",
 		"device_leds": "LEDs",
 		"execute_now": "Möchten Sie dieses Muster jetzt einstellen?",
+		"explanation": "Welches Muster möchten Sie auf diesem Gerät für 30 Sekunden einstellen?",
 		"pattern": "Wählen Sie das Muster, das Sie verwenden möchten:",
 		"set_leds": "LEDs einstellen",
 		"when_blink_leds": "Wann möchten Sie die LEDs blinken lassen?"
@@ -46,6 +47,7 @@
 		"cancel": "Abbrechen",
 		"certificate": "Zertifikat",
 		"certificates": "Zertifikate",
+		"claim": "Anspruch",
 		"clear": "Löschen",
 		"close": "Schließen",
 		"code": "Code",
@@ -60,6 +62,7 @@
 		"confirm_stop_editing": "Möchten Sie die Bearbeitung wirklich beenden? Dadurch werden alle nicht gespeicherten Änderungen, die Sie vorgenommen haben, verworfen.",
 		"connected": "Verbindung wurde hergestellt",
 		"copied": "kopiert!",
+		"copied_to_clipboard": "In die Zwischenablage kopiert!",
 		"copy_to_clipboard": "In die Zwischenablage kopieren",
 		"create": "Erstellen",
 		"created": "Erstellt",
@@ -116,6 +119,7 @@
 		"hours": "std",
 		"id": "ID",
 		"invalid_credentials": "Ungültiger Benutzername und / oder Passwort",
+		"invalid_date_explanation": "Ungültiges Datum, bitte verwenden Sie den Kalender, auf den Sie über die Schaltfläche rechts zugreifen können",
 		"invalid_file": "Die ausgewählte Datei war ungültig, bitte lesen Sie die Anweisungen und passen Sie Ihre Datei entsprechend an",
 		"invalid_password": "Dieses Passwort entspricht nicht den grundlegenden Passwortregeln. Bitte besuchen Sie unsere Seite Passwortrichtlinien, um mehr zu erfahren",
 		"invalid_pem": "Ihre PEM-Datei ist ungültig. Es sollte mit '-----BEGIN CERTIFICATE-----' ODER '-----BEGIN PRIVATE KEY-----' beginnen und mit '-----END CERTIFICATE--- enden. --' ODER '-----END PRIVATSCHLÜSSEL-----'",
@@ -161,6 +165,7 @@
 		"recorded": "Verzeichnet",
 		"refresh": "Aktualisierung",
 		"refresh_device": "Gerät aktualisieren",
+		"remove_claim": "Anspruch entfernen",
 		"required": "Erforderlich",
 		"result": "Ergebnis",
 		"save": "Sparen",
@@ -201,6 +206,7 @@
 		"vendors": "Anbieter",
 		"view_more": "Mehr anzeigen",
 		"visibility": "Sichtweite",
+		"waiting_for_update": "Warten auf Aktualisierung",
 		"yes": "Ja"
 	},
 	"configuration": {
@@ -654,11 +660,14 @@
 	},
 	"statistics": {
 		"data": "Daten (KB)",
+		"data_mb": "Daten (MB)",
 		"latest_statistics": "Neueste Statistiken",
 		"lifetime_stats": "Lifetime-Statistik",
+		"memory": "Erinnerung",
 		"no_interfaces": "Keine Statistiken zur Schnittstellenlebensdauer verfügbar",
 		"show_latest": "Letzte Statistik",
-		"title": "Statistiken"
+		"title": "Statistiken",
+		"used": "Verwendeter Speicher %"
 	},
 	"status": {
 		"connection_status": "Status",
@@ -670,17 +679,22 @@
 		"percentage_free": "{{percentage}}% von {{total}} kostenlos",
 		"percentage_used": "{{percentage}}% von {{total}} verwendet",
 		"title": "#{{serialNumber}} Status",
+		"total_memory": "Gesamtspeicher",
 		"uptime": "Betriebszeit",
 		"used_total_memory": "{{used}} verwendet / {{total}} insgesamt"
 	},
 	"subscriber": {
+		"add_device_subscriber_explanation": "Um andere Geräte zu reklamieren, kannst du unsere Suchleiste verwenden oder direkt aus der Tabelle reklamieren. Wenn ein Gerät bereits von einem Benutzer beansprucht wurde, müssen Sie zu dessen Details gehen und die Zuweisung aufheben, bevor Sie es beanspruchen.",
 		"create": "Abonnenten erstellen",
+		"devices_one": "{{count}} Gerät",
+		"devices_other": "{{count}} Geräte",
 		"edit": "Abonnent bearbeiten",
 		"error_create": "Fehler beim Erstellen des Abonnenten: {{error}}",
 		"error_delete": "Fehler beim Löschen des Abonnenten: {{error}}",
 		"error_fetching": "Fehler beim Abrufen von Abonnenten: {{error}}",
 		"error_fetching_single": "Fehler beim Abrufen des Abonnenten: {{error}}",
 		"error_update": "Fehler beim Aktualisieren des Abonnenten: {{error}}",
+		"is_already_claimed": "wird bereits beansprucht von",
 		"subscribers": "Abonnenten",
 		"success_create": "Abonnent erfolgreich erstellt!",
 		"success_delete": "Abonnent erfolgreich gelöscht!",
@@ -791,7 +805,10 @@
 		"associations": "Verbände",
 		"mode": "Modus",
 		"network_diagram": "Netzwerkdiagramm",
+		"override_dfs": "DFS überschreiben",
 		"radios": "Radios",
-		"title": "WLAN-Analyse"
+		"scan_warning": "Ihr 5G-Funkgerät befindet sich auf einem Radarkanal, Sie müssen „Override DFS“ aktivieren, um das Scannen aller 5G-Kanäle zu ermöglichen",
+		"title": "WLAN-Analyse",
+		"vendor": "Verkäufer"
 	}
 }
